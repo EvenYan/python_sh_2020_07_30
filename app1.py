@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, \
-    jsonify, redirect, url_for, request
+    jsonify, redirect, url_for
 from tools import gen_secret
 
 
@@ -45,7 +45,7 @@ def deal_register():
     name = request.form.get("name")
     passwd = request.form.get("passwd")
     passwd = gen_secret(passwd)
-    return name + ":" + passwd
+    return render_template('user_center.html', username=name)
 
 
 
