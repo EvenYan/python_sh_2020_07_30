@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <title>我的主页</title>
+</head>
+<body>
+    <h1>我的主页</h1>
+    <button id="btn_1">获取数据</button>
+    
+    <script>
+        $("#btn_1").click(function(){
+            $.ajax({
+                url: '/get_data',
+                type: 'get',
+                dataType: 'json',
+                success:function (data) {
+                    // todo
+                    console.log(data);
+                },
+                error:function (data) {
+                    alert('Ajax请求失败！');
+                },
+            });
+        })
+    </script>
+</body>
+</html>

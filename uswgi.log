@@ -1,0 +1,585 @@
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 00:04:18 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 12800
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8080 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:61574 (port auto-assigned) fd 3
+Python version: 3.7.7 (default, Mar 10 2020, 15:43:33)  [Clang 11.0.0 (clang-1100.0.33.17)]
+Python main interpreter initialized at 0x7fee93e05cb0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 249984 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:813: UserWarning: Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. Defaulting SQLALCHEMY_DATABASE_URI to "sqlite:///:memory:".
+  'Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. '
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fee93e05cb0 pid: 2811 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2811)
+spawned uWSGI worker 1 (pid: 2812, cores: 2)
+spawned uWSGI worker 2 (pid: 2813, cores: 2)
+spawned uWSGI http 1 (pid: 2814)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 00:04:25,880 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 00:04:25,881 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,883 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 00:04:25,883 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,885 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 00:04:25,885 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,886 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 00:04:25,886 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,888 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:04:25,888 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,889 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:04:25,889 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,890 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 00:04:25,890 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,891 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 00:04:25,892 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 00:04:25,892 INFO sqlalchemy.engine.base.Engine {'param_1': 3}
+2020-07-31 00:04:25,894 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 00:04:25,894 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+2020-07-31 00:04:25,896 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s 
+ LIMIT %(param_1)s
+2020-07-31 00:04:25,896 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tim', 'param_1': 1}
+2020-07-31 00:04:25,897 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 00:04:25,898 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+alice rott Tim Tom
+2020-07-31 00:04:25,899 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 00:04:25,899 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,900 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 00:04:25,900 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:04:25,902 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s AND user.passwd = %(passwd_1)s
+2020-07-31 00:04:25,902 INFO sqlalchemy.engine.base.Engine {'name_1': 'Linux', 'passwd_1': 'root'}
+[<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>] [<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>] [<User 4>]
+2020-07-31 00:04:25,903 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s OR (user.passwd LIKE concat(%(passwd_1)s, '%%'))
+2020-07-31 00:04:25,904 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tom', 'passwd_1': 'ro'}
+[<User 1>, <User 2>, <User 3>, <User 4>]
+2020-07-31 00:04:25,905 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s, %(param_2)s
+2020-07-31 00:04:25,905 INFO sqlalchemy.engine.base.Engine {'param_1': 4, 'param_2': 2}
+[<User 6>, <User 7>]
+2020-07-31 00:04:25,906 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user ORDER BY user.id DESC
+2020-07-31 00:04:25,906 INFO sqlalchemy.engine.base.Engine {}
+[<User 7>, <User 6>, <User 4>, <User 3>, <User 2>, <User 1>]
+2020-07-31 00:04:25,907 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd 
+FROM user GROUP BY user.passwd
+2020-07-31 00:04:25,908 INFO sqlalchemy.engine.base.Engine {}
+[('rott',), ('root',), ('Merry',), ('Bob',)]
+2020-07-31 00:04:25,909 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd, count(user.passwd) AS count_1 
+FROM user GROUP BY user.passwd
+2020-07-31 00:04:25,909 INFO sqlalchemy.engine.base.Engine {}
+[('rott', 1), ('root', 3), ('Merry', 1), ('Bob', 1)]
+2020-07-31 00:04:25,910 INFO sqlalchemy.engine.base.Engine ROLLBACK
+[pid: 2813|app: 0|req: 1/1] 127.0.0.1 () {48 vars in 1025 bytes} [Fri Jul 31 00:04:25 2020] GET /search_data => generated 12 bytes in 79 msecs (HTTP/1.1 200) 2 headers in 79 bytes (2 switches on core 0)
+[pid: 2813|app: 0|req: 2/2] 127.0.0.1 () {46 vars in 932 bytes} [Fri Jul 31 00:04:26 2020] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (2 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 2814)
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 00:04:57 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 12800
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:61627 (port auto-assigned) fd 3
+Python version: 3.7.7 (default, Mar 10 2020, 15:43:33)  [Clang 11.0.0 (clang-1100.0.33.17)]
+Python main interpreter initialized at 0x7faa37408a50
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 249984 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:813: UserWarning: Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. Defaulting SQLALCHEMY_DATABASE_URI to "sqlite:///:memory:".
+  'Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. '
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7faa37408a50 pid: 2829 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2829)
+spawned uWSGI worker 1 (pid: 2830, cores: 2)
+spawned uWSGI worker 2 (pid: 2831, cores: 2)
+spawned uWSGI http 1 (pid: 2832)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 00:05:03,222 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 00:05:03,222 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,224 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 00:05:03,224 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,225 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 00:05:03,226 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,226 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 00:05:03,226 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,229 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:05:03,229 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,230 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:05:03,230 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,231 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 00:05:03,231 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,232 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 00:05:03,233 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 00:05:03,234 INFO sqlalchemy.engine.base.Engine {'param_1': 3}
+2020-07-31 00:05:03,235 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 00:05:03,235 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+2020-07-31 00:05:03,237 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s 
+ LIMIT %(param_1)s
+2020-07-31 00:05:03,237 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tim', 'param_1': 1}
+2020-07-31 00:05:03,238 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 00:05:03,238 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+alice rott Tim Tom
+2020-07-31 00:05:03,239 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 00:05:03,239 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,240 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 00:05:03,241 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:03,242 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s AND user.passwd = %(passwd_1)s
+2020-07-31 00:05:03,242 INFO sqlalchemy.engine.base.Engine {'name_1': 'Linux', 'passwd_1': 'root'}
+[<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>] [<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>] [<User 4>]
+2020-07-31 00:05:03,243 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s OR (user.passwd LIKE concat(%(passwd_1)s, '%%'))
+2020-07-31 00:05:03,244 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tom', 'passwd_1': 'ro'}
+[<User 1>, <User 2>, <User 3>, <User 4>]
+2020-07-31 00:05:03,245 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s, %(param_2)s
+2020-07-31 00:05:03,245 INFO sqlalchemy.engine.base.Engine {'param_1': 4, 'param_2': 2}
+[<User 6>, <User 7>]
+2020-07-31 00:05:03,246 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user ORDER BY user.id DESC
+2020-07-31 00:05:03,247 INFO sqlalchemy.engine.base.Engine {}
+[<User 7>, <User 6>, <User 4>, <User 3>, <User 2>, <User 1>]
+2020-07-31 00:05:03,248 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd 
+FROM user GROUP BY user.passwd
+2020-07-31 00:05:03,248 INFO sqlalchemy.engine.base.Engine {}
+[('rott',), ('root',), ('Merry',), ('Bob',)]
+2020-07-31 00:05:03,249 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd, count(user.passwd) AS count_1 
+FROM user GROUP BY user.passwd
+2020-07-31 00:05:03,249 INFO sqlalchemy.engine.base.Engine {}
+[('rott', 1), ('root', 3), ('Merry', 1), ('Bob', 1)]
+2020-07-31 00:05:03,251 INFO sqlalchemy.engine.base.Engine ROLLBACK
+[pid: 2830|app: 0|req: 1/1] 127.0.0.1 () {48 vars in 1025 bytes} [Fri Jul 31 00:05:03 2020] GET /search_data => generated 12 bytes in 77 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 00:05:07,176 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 00:05:07,176 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,178 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 00:05:07,178 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,180 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 00:05:07,180 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,181 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 00:05:07,181 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,183 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:05:07,184 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,184 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 00:05:07,185 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,185 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 00:05:07,185 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 00:05:07,187 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 00:05:07,187 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 00:05:07,188 INFO sqlalchemy.engine.base.Engine {'param_1': 7}
+2020-07-31 00:05:07,189 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2831|app: 0|req: 1/2] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 00:05:07 2020] GET /update_data => generated 15 bytes in 61 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+2020-07-31 00:05:10,239 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 00:05:10,240 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 00:05:10,240 INFO sqlalchemy.engine.base.Engine {'param_1': 5}
+[2020-07-31 00:05:10,241] ERROR in app: Exception on /delete_data [GET]
+Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2039, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 54, in delete_data
+    db.session.delete(user)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2042, in delete
+    exc.UnmappedInstanceError(instance), replace_context=err,
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2020-07-31 00:05:10,245 INFO sqlalchemy.engine.base.Engine ROLLBACK
+[pid: 2831|app: 0|req: 2/3] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 00:05:10 2020] GET /delete_data => generated 290 bytes in 7 msecs (HTTP/1.1 500) 2 headers in 99 bytes (1 switches on core 1)
+2020-07-31 00:05:15,856 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 00:05:15,857 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 00:05:15,857 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 00:05:15,858 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 00:05:15,858 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 00:05:15,859 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2831|app: 0|req: 3/4] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 00:05:15 2020] GET /insert_data => generated 21 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+2020-07-31 08:23:52,628 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:23:52,634 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:52,634 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:23:52,647 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:52,648 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:23:52,648 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2830|app: 0|req: 2/5] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:23:52 2020] GET /insert_data => generated 21 bytes in 99 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+2020-07-31 08:23:53,941 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:23:53,942 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:53,942 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:23:53,943 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:53,943 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:23:53,943 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2830|app: 0|req: 3/6] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:23:53 2020] GET /insert_data => generated 21 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (2 switches on core 1)
+2020-07-31 08:23:54,555 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:23:54,556 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:54,557 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:23:54,558 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:54,558 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:23:54,559 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2831|app: 0|req: 4/7] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:23:54 2020] GET /insert_data => generated 21 bytes in 23 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+2020-07-31 08:23:55,071 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:23:55,072 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:55,072 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:23:55,073 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:55,073 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:23:55,073 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2831|app: 0|req: 5/8] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:23:55 2020] GET /insert_data => generated 21 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (2 switches on core 1)
+2020-07-31 08:23:57,097 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:23:57,099 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:57,099 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:23:57,100 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:23:57,100 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:23:57,100 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 2831|app: 0|req: 6/9] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:23:57 2020] GET /insert_data => generated 21 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 2832)
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 08:24:13 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 12800
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:5000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:49885 (port auto-assigned) fd 3
+Python version: 3.7.7 (default, Mar 10 2020, 15:43:33)  [Clang 11.0.0 (clang-1100.0.33.17)]
+Python main interpreter initialized at 0x7fc7dd605fa0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 249984 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:813: UserWarning: Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. Defaulting SQLALCHEMY_DATABASE_URI to "sqlite:///:memory:".
+  'Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. '
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fc7dd605fa0 pid: 3895 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3895)
+spawned uWSGI worker 1 (pid: 3896, cores: 2)
+spawned uWSGI worker 2 (pid: 3897, cores: 2)
+spawned uWSGI http 1 (pid: 3898)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 08:24:15,573 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 08:24:15,574 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,584 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 08:24:15,584 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,586 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 08:24:15,587 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,588 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 08:24:15,588 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,595 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:24:15,596 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,596 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:24:15,596 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,597 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 08:24:15,597 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:15,598 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:24:15,599 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:24:15,599 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:24:15,600 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:24:15,600 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:24:15,601 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 3897|app: 0|req: 1/1] 127.0.0.1 () {50 vars in 1056 bytes} [Fri Jul 31 08:24:15 2020] GET /insert_data => generated 21 bytes in 96 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 3898)
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 08:24:28 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 12800
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:5005 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:49920 (port auto-assigned) fd 3
+Python version: 3.7.7 (default, Mar 10 2020, 15:43:33)  [Clang 11.0.0 (clang-1100.0.33.17)]
+Python main interpreter initialized at 0x7fc059906270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 249984 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:813: UserWarning: Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. Defaulting SQLALCHEMY_DATABASE_URI to "sqlite:///:memory:".
+  'Neither SQLALCHEMY_DATABASE_URI nor SQLALCHEMY_BINDS is set. '
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fc059906270 pid: 3909 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3909)
+spawned uWSGI worker 1 (pid: 3910, cores: 2)
+spawned uWSGI worker 2 (pid: 3911, cores: 2)
+spawned uWSGI http 1 (pid: 3912)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 08:24:30,184 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 08:24:30,184 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,187 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 08:24:30,187 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,190 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 08:24:30,191 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,191 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 08:24:30,192 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,195 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:24:30,195 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,196 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:24:30,196 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,197 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 08:24:30,197 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:24:30,198 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:24:30,200 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:24:30,200 INFO sqlalchemy.engine.base.Engine {'name': 'Merry', 'passwd': 'Merry'}
+2020-07-31 08:24:30,202 INFO sqlalchemy.engine.base.Engine INSERT INTO user (name, passwd) VALUES (%(name)s, %(passwd)s)
+2020-07-31 08:24:30,202 INFO sqlalchemy.engine.base.Engine {'name': 'Bob', 'passwd': 'Bob'}
+2020-07-31 08:24:30,203 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 3910|app: 0|req: 1/1] 127.0.0.1 () {50 vars in 1054 bytes} [Fri Jul 31 08:24:30 2020] GET /insert_data => generated 21 bytes in 77 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 3910|app: 0|req: 2/2] 127.0.0.1 () {50 vars in 984 bytes} [Fri Jul 31 08:24:30 2020] GET /favicon.ico => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+2020-07-31 08:24:35,741 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:24:35,742 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 08:24:35,742 INFO sqlalchemy.engine.base.Engine {'param_1': 7}
+2020-07-31 08:24:35,744 INFO sqlalchemy.engine.base.Engine COMMIT
+[pid: 3910|app: 0|req: 3/3] 127.0.0.1 () {48 vars in 1024 bytes} [Fri Jul 31 08:24:35 2020] GET /update_data => generated 15 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 79 bytes (2 switches on core 0)
+/usr/local/opt/python/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pymysql/cursors.py:170: Warning: (3719, "'utf8' is currently an alias for the character set UTF8MB3, but will be an alias for UTF8MB4 in a future release. Please consider using UTF8MB4 in order to be unambiguous.")
+  result = self._query(query)
+2020-07-31 08:26:22,876 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2020-07-31 08:26:22,876 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,879 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'lower_case_table_names'
+2020-07-31 08:26:22,880 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,882 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2020-07-31 08:26:22,882 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,882 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2020-07-31 08:26:22,883 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,885 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:26:22,885 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,886 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2020-07-31 08:26:22,887 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,888 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2020-07-31 08:26:22,888 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,890 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2020-07-31 08:26:22,890 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.id = %(param_1)s
+2020-07-31 08:26:22,890 INFO sqlalchemy.engine.base.Engine {'param_1': 3}
+2020-07-31 08:26:22,892 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 08:26:22,892 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+2020-07-31 08:26:22,893 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s 
+ LIMIT %(param_1)s
+2020-07-31 08:26:22,893 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tim', 'param_1': 1}
+2020-07-31 08:26:22,894 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s
+2020-07-31 08:26:22,894 INFO sqlalchemy.engine.base.Engine {'param_1': 1}
+alice rott Tim Tom
+2020-07-31 08:26:22,895 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 08:26:22,895 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,896 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user
+2020-07-31 08:26:22,897 INFO sqlalchemy.engine.base.Engine {}
+2020-07-31 08:26:22,898 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s AND user.passwd = %(passwd_1)s
+2020-07-31 08:26:22,898 INFO sqlalchemy.engine.base.Engine {'name_1': 'Linux', 'passwd_1': 'root'}
+[<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>, <User 8>, <User 9>, <User 10>, <User 11>, <User 12>, <User 13>, <User 14>, <User 15>, <User 16>, <User 17>, <User 18>, <User 19>, <User 20>, <User 21>, <User 22>, <User 23>] [<User 1>, <User 2>, <User 3>, <User 4>, <User 6>, <User 7>, <User 8>, <User 9>, <User 10>, <User 11>, <User 12>, <User 13>, <User 14>, <User 15>, <User 16>, <User 17>, <User 18>, <User 19>, <User 20>, <User 21>, <User 22>, <User 23>] [<User 4>]
+2020-07-31 08:26:22,899 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+WHERE user.name = %(name_1)s OR (user.passwd LIKE concat(%(passwd_1)s, '%%'))
+2020-07-31 08:26:22,900 INFO sqlalchemy.engine.base.Engine {'name_1': 'Tom', 'passwd_1': 'ro'}
+[<User 1>, <User 2>, <User 3>, <User 4>]
+2020-07-31 08:26:22,901 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user 
+ LIMIT %(param_1)s, %(param_2)s
+2020-07-31 08:26:22,901 INFO sqlalchemy.engine.base.Engine {'param_1': 4, 'param_2': 2}
+[<User 6>, <User 7>]
+2020-07-31 08:26:22,902 INFO sqlalchemy.engine.base.Engine SELECT user.id AS user_id, user.name AS user_name, user.passwd AS user_passwd 
+FROM user ORDER BY user.id DESC
+2020-07-31 08:26:22,902 INFO sqlalchemy.engine.base.Engine {}
+[<User 23>, <User 22>, <User 21>, <User 20>, <User 19>, <User 18>, <User 17>, <User 16>, <User 15>, <User 14>, <User 13>, <User 12>, <User 11>, <User 10>, <User 9>, <User 8>, <User 7>, <User 6>, <User 4>, <User 3>, <User 2>, <User 1>]
+2020-07-31 08:26:22,903 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd 
+FROM user GROUP BY user.passwd
+2020-07-31 08:26:22,904 INFO sqlalchemy.engine.base.Engine {}
+[('rott',), ('root',), ('Merry',), ('Bob',)]
+2020-07-31 08:26:22,905 INFO sqlalchemy.engine.base.Engine SELECT user.passwd AS user_passwd, count(user.passwd) AS count_1 
+FROM user GROUP BY user.passwd
+2020-07-31 08:26:22,905 INFO sqlalchemy.engine.base.Engine {}
+[('rott', 1), ('root', 3), ('Merry', 9), ('Bob', 9)]
+2020-07-31 08:26:22,907 INFO sqlalchemy.engine.base.Engine ROLLBACK
+[pid: 3911|app: 0|req: 1/4] 127.0.0.1 () {48 vars in 1025 bytes} [Fri Jul 31 08:26:22 2020] GET /search_data => generated 12 bytes in 73 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 12:30:40 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 10496
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5005).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 3911|app: 0|req: 2/5] 127.0.0.1 () {48 vars in 1065 bytes} [Fri Jul 31 12:30:48 2020] GET / => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 3911|app: 0|req: 3/6] 127.0.0.1 () {48 vars in 1081 bytes} [Fri Jul 31 12:30:55 2020] GET /homepage => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 3911|app: 0|req: 4/7] 127.0.0.1 () {48 vars in 1081 bytes} [Fri Jul 31 12:31:00 2020] GET /get_data => generated 232 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Fri Jul 31 12:32:34 2020] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.32.62) on 03 July 2020 00:57:01
+os: Darwin-19.4.0 Darwin Kernel Version 19.4.0: Wed Mar  4 22:28:40 PST 2020; root:xnu-6153.101.6~15/RELEASE_X86_64
+nodename: evenyandeMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /Users/evenyan/Desktop/code/my_project
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /Users/evenyan/Desktop/code/my_project
+your processes number limit is 5568
+your memory page size is 4096 bytes
+detected max file descriptor number: 10496
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:5009 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:56262 (port auto-assigned) fd 3
+Python version: 3.7.7 (default, Mar 10 2020, 15:43:33)  [Clang 11.0.0 (clang-1100.0.33.17)]
+Python main interpreter initialized at 0x7fc5f28067b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166656 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fc5f28067b0 pid: 5484 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5484)
+spawned uWSGI worker 1 (pid: 5485, cores: 2)
+spawned uWSGI http 1 (pid: 5486)
+[pid: 5485|app: 0|req: 1/1] 127.0.0.1 () {48 vars in 1081 bytes} [Fri Jul 31 12:32:40 2020] GET /get_data => generated 26 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 71 bytes (2 switches on core 0)
+[pid: 5485|app: 0|req: 2/2] 127.0.0.1 () {46 vars in 991 bytes} [Fri Jul 31 12:32:40 2020] GET /favicon.ico => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 87 bytes (2 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 5486)
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
