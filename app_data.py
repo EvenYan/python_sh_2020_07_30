@@ -29,4 +29,5 @@ if __name__ == "__main__":
     # 清除数据库中所有数据(第一次)
     db.drop_all()
     # 创建所有的表
+    db.create_all()
     app.run(debug=True, port=5555)
