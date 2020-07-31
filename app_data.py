@@ -25,9 +25,17 @@ def insert_data():
     return "新建数据成功！"
 
 
+@app.route("/search_data")
+def search_data():
+    user1 = User.query.get(2)
+    user_list = User.query.filter_by(name="Tom").all()
+    print(user1.name, user1.passwd)
+    print(user_list)
+    return "查找成功！"
+
 if __name__ == "__main__":
     # 清除数据库中所有数据(第一次)
-    db.drop_all()
+    # db.drop_all()
     # 创建所有的表
-    db.create_all()
+    # db.create_all()
     app.run(debug=True, port=5555)
